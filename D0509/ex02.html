@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*input 태그를 블록 요소로 지정 */
+        input{
+            display:block;
+        }
+        </style>
+        <script>
+           function fun1(){
+                console.log("fun1함수 호출")
+                let s = document.getElementById("username").value
+                console.log(s)
+
+                const usertag=document.getElementById("username")
+                console.log(usertag)
+                console.log(usertag.value)
+            }
+            function fun2(){
+                /*let result=document.getElementById("password").value
+                document.getElementById("pc").value=result*/
+
+                document.getElementById("pc").value=document.getElementById("password").value
+            }
+        </script>
+</head>
+<body>
+    아이디 : <input type="text" id="username">
+    <!-- 버튼을 클릭했을때 fun1이라는 함수 호출-->
+    <button onclick="fun1()">아이디 입력완료</button><br>
+    비밀번호 : <input type="password" id="password">
+    비밀번호 : <input type="text" id="pc">
+    <button onclick="fun2()">비밀번호체크</button><br>
+        <script>
+            console.log(document)
+            //id=username 인 요소를 js로 가져옴
+            console.log(document.getElementById("username"))
+            //value값을 출력
+            console.log(document.getElementById("username").value)
+            //특정 id
+            console.log(document.querySelector("#username"))
+            //태그
+            console.log(document.querySelector("input"))
+            console.log(document.querySelectorAll("input"))
+    
+        </script>
+</body>
+</html>
