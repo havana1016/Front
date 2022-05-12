@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function sc(){
+            let score=document.getElementById("score").value;
+            let result;
+            if(score>=0 && score<=100){
+                if(score>=90){
+                result="A"
+            }else if(score>=80){
+                result="B"
+            }else {
+                result="F"
+            }
+            document.getElementById("result").innerHTML=`회원님의 학점은 ${result} 입니다.`;
+        }
+            else{
+                document.getElementById("result").innerHTML="점수를 다시 입력해주세요~";
+            }
+           
+        }
+    </script>
+
+
+</head>
+<body>
+    점수 입력 : <input type="text" id="score"><br>
+    <button onclick="sc()">학점 계산</button>
+    <div id="result"></div>
+
+
+
+
+</body>
+</html>

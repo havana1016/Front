@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container col-6">
+        
+        <!--<input type="text" id="username" onkeyup="namec()" class="form-control" placeholder="user name"> -->
+        <input type="text" id="username" onblur="namec()" class="form-control" placeholder="user name">
+        <div id="dd"></div>
+    </div>
+    
+</body>
+<script>
+    function namec(){
+        console.log("함수호출")
+        let aa=document.getElementById("username").value
+        console.log(aa)
+        let hss=document.getElementById("dd")
+        if(aa.length==0){
+            hss.innerHTML="필수 입력 정보입니다."
+            hss.style.color="red"
+        }
+        else if(aa.length>=5 && aa.length<=12){
+            
+            hss.innerHTML="좋아요"
+            hss.style.color="green"
+        }else{
+            hss.innerHTML="5~12자 이내로 작성해주세요"
+            hss.style.color="red"
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 정규식 표현(Regular Expresion) -->
+    <!--
+        1. 영문만 5~10 글자
+        2. 영문소문자, 숫자
+        3. 영문소문자(필수), 숫자
+    -->
+    <input type="text" id="id1" onblur="id1c()">
+    <p id="id1-result"></p>
+    <input type="text" id="id2" onblur="id2c()">
+    <p id="id2-result"></p>
+    <input type="text" id="id3" onblur="id3c()">
+    <p id="id3-result"></p>
+    <input type="text" id="id4" onblur="id4c()">
+    <p id="id4-result"></p>
+    <input type="text" id="id5" onblur="id5c()">
+    <input type="text" id="id6" onblur="id6c()">
+
+    <input type="text" id="pn1" onblur="pn1c()">
+
+</body>
+<script>
+    function id1c(){
+        let aa = document.getElementById("id1").value;
+        const exp = /^[a-z]{5,10}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+
+    function id2c(){
+        let aa = document.getElementById("id2").value;
+        const exp = /^[a-z\d]{5,10}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+
+    function id3c(){
+        let aa = document.getElementById("id3").value;
+        const exp = /^(?=.*[a-z])[a-z\d]{5,10}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+
+    function id4c(){
+        let aa = document.getElementById("id4").value;
+        const exp = /^(?=.*[a-z])(?=.*[\d])[a-z\d]{5,10}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+    function id5c(){
+        let aa = document.getElementById("id5").value;
+        const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])[a-z \d A-Z]{5,10}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+    function id6c(){
+        let aa = document.getElementById("id6").value;
+        const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d])(?=.*[-_])[a-z \d A-Z -_]{5,10}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+    function pn1c(){
+        let aa = document.getElementById("pn1").value;
+        const exp = /^\d{3}-\d{4}-\d{4}$/
+        if(aa.match(exp)){
+            console.log("일치")
+        }else{
+            console.log("불일치")
+        }
+    }
+</script>
+</html>
